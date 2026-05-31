@@ -21,8 +21,14 @@ public class ProductModel {
     @Column(name = "name", nullable = false)
     private String name;
 
+    @Column(name = "description", nullable = false, length = 1024)
+    private String description;
+
     @Column(name = "price", nullable = false, precision = 12, scale = 2)
     private BigDecimal price;
+
+    @Column(name = "stock", nullable = false)
+    private int stock;
 
     @Column(name = "unit", nullable = false)
     private String unit;
@@ -43,12 +49,28 @@ public class ProductModel {
         this.name = name;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public BigDecimal getPrice() {
         return price;
     }
 
     public void setPrice(BigDecimal price) {
         this.price = price;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
     }
 
     public String getUnit() {

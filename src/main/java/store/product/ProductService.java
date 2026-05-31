@@ -21,8 +21,10 @@ public class ProductService {
     public ProductOut create(ProductIn in) {
         ProductModel model = new ProductModel();
         model.setName(in.name().trim());
+        model.setDescription(in.description().trim());
         model.setUnit(in.unit().trim());
         model.setPrice(scale(in.price()));
+        model.setStock(in.stock());
         return toOut(repository.save(model));
     }
 
@@ -51,7 +53,9 @@ public class ProductService {
         return new ProductOut(
             model.getId(),
             model.getName(),
+            model.getDescription(),
             scale(model.getPrice()),
+            model.getStock(),
             model.getUnit()
         );
     }

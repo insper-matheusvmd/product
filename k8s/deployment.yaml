@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: product-service
-          image: matheusvmd/product-service:latest
+          image: iquenavarro/product-service:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
